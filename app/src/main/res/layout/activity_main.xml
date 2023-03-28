@@ -1,27 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".JsonActivity"
-    android:orientation="vertical">
+    android:background="#faf4c0"
+    tools:context=".MainActivity">
 
-    <ListView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6"
-        android:layout_marginTop="5dp"
-        android:padding="5dp"
-        android:id="@+id/listView_main" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:layout_margin="5dp"
-        android:padding="5dp"
-        android:id="@+id/textView_main" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/container">
 
+            <View
+                android:id="@+id/view_main"
+                android:layout_width="wrap_content"
+                android:layout_height="180dp"
+                android:background="#faecc5" />
+        </FrameLayout>
 
-</LinearLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigationview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:labelVisibilityMode="labeled"
+            app:itemBackground="@color/white"
+            app:itemIconTint="@drawable/menu_item_color"
+            app:itemTextColor="@drawable/menu_item_color"
+            app:menu="@menu/bottom_menu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="96dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/name_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="닉네임"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_main"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="님의 현재 위치"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/location_main"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="인천대학교"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="330dp"
+        android:layout_height="5px"
+        android:background="#D6C8A1"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="180dp" />
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="300dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="220dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_main_list"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="6.5dp"
+                android:text="주변 음식점 조회"
+                android:textStyle="bold"
+                android:backgroundTint="#ffffff"
+                android:textColor="#4c4c4c">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btn_main_menu"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6.5dp"
+                android:text="메뉴 추천"
+                android:textStyle="bold"
+                android:backgroundTint="#ffffff"
+                android:textColor="#4c4c4c">
+
+            </Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Button
+                android:id="@+id/btn_main_review"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="6.5dp"
+                android:text="리뷰 작성"
+                android:textStyle="bold"
+                android:backgroundTint="#ffffff"
+                android:textColor="#4c4c4c">
+            </Button>
+
+            <Button
+                android:id="@+id/btn_main_mypage"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6.5dp"
+                android:text="마이페이지"
+                android:textStyle="bold"
+                android:backgroundTint="#ffffff"
+                android:textColor="#4c4c4c">
+            </Button>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
